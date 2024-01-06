@@ -1,4 +1,4 @@
-#include "swap.h"
+#include "../swap.h"
 
 void	push_a(t_list **a, t_list **b)
 {
@@ -12,7 +12,7 @@ void	push_a(t_list **a, t_list **b)
 	ft_lstadd_front(a, *b);
 	(*a)->next = tmp2;
 	(*b) = tmp;
-/* 	ft_printf("pa\n"); */
+	printf("pa\n");
 }
 
 void	push_b(t_list **b, t_list **a)
@@ -27,7 +27,7 @@ void	push_b(t_list **b, t_list **a)
 	ft_lstadd_front(b, *a);
 	(*b)->next = tmp2;
 	(*a) = tmp;
-	/* ft_printf("pb\n"); */
+	printf("pb\n");
 }
 
 void print_list(t_list *list)
