@@ -1,11 +1,4 @@
-<h1>Push Swap</h1>
+# Push Swap
 
-<h2>Push Swap is a sorting algorithm implementation that aims to sort a stack of integers using a limited set of operations. It was developed as a project for the 42 coding school.</h2>
+## Push Swap is a sorting algorithm implementation that aims to sort a stack of integers using a limited set of operations. It was developed as a project for the 42 coding school. The goal is to sort the integers in Stack A in ascending order using a limited set of operations, which include swapping, pushing, and rotating elements between the stacks.
 
-## Introduction
-
-Push Swap is a sorting algorithm that operates on two stacks, named Stack A and Stack B. The goal is to sort the integers in Stack A in ascending order using a limited set of operations, which include swapping, pushing, and rotating elements between the stacks.
-
-## Usage
-
-Once you have compiled the program, you can use it to sort a stack of integers. Here's how you can run Push Swap:
