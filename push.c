@@ -1,25 +1,33 @@
 #include "swap.h"
 
-void push_a(t_list **a, t_list **b)
+void	push_a(t_list **a, t_list **b)
 {
-    if (*b != NULL)
-    {
-        t_list *tmp = *b;
-        *b = (*b)->next;
-        tmp->next = *a;
-        *a = tmp;
-    }
+	t_list	*tmp;
+	t_list	*tmp2;
+
+	if (!*b)
+		return ;
+	tmp2 = (*a);
+	tmp = (*b)->next;
+	ft_lstadd_front(a, *b);
+	(*a)->next = tmp2;
+	(*b) = tmp;
+/* 	ft_printf("pa\n"); */
 }
 
-void push_b(t_list **a, t_list **b)
+void	push_b(t_list **b, t_list **a)
 {
-    if (*a != NULL)
-    {
-        t_list *tmp = *a;
-        *a = (*a)->next;
-        tmp->next = *b;
-        *b = tmp;
-    }
+	t_list	*tmp;
+	t_list	*tmp2;
+
+	if (!*a)
+		return ;
+	tmp2 = (*b);
+	tmp = (*a)->next;
+	ft_lstadd_front(b, *a);
+	(*b)->next = tmp2;
+	(*a) = tmp;
+	/* ft_printf("pb\n"); */
 }
 
 void print_list(t_list *list)
@@ -32,41 +40,23 @@ void print_list(t_list *list)
   printf("\n");
 }
 
-void add_element(t_list **list, int data)
-{
-  t_list *new_node = malloc(sizeof(t_list));
-  if (new_node == NULL)
-  {
-    printf("Error: Failed to allocate memory for new node\n");
-    return;
-  }
-
-  new_node->data = data;
-  new_node->next = NULL;
-
-  if (*list == NULL)
-  {
-    *list = new_node;
-  }
-  else
-  {
-    t_list *current = *list;
-    while (current->next != NULL)
-    {
-      current = current->next;
-    }
-    current->next = new_node;
-  }
-}
-
-
-
 int main()
 {
   t_list *a = NULL;
   t_list *b = NULL;
 
+  ft_lstadd_back(&a, ft_lstnew(1));
+  ft_lstadd_back(&a, ft_lstnew(2));
+  ft_lstadd_back(&a, ft_lstnew(3));
+  ft_lstadd_back(&a, ft_lstnew(4));
+
+  ft_lstadd_back(&b, ft_lstnew(5));
+  ft_lstadd_back(&b, ft_lstnew(6));
+  ft_lstadd_back(&b, ft_lstnew(7));
+  ft_lstadd_back(&b, ft_lstnew(8));
+
   // Test push_a
+  print_list(a);
   push_a(&a, &b);
   printf("After push_a:\n");
   printf("a: ");
@@ -76,6 +66,7 @@ int main()
   printf("\n");
 
   // Test push_b
+  print_list(a);
   push_b(&a, &b);
   printf("After push_b:\n");
   printf("a: ");

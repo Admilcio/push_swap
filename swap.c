@@ -27,6 +27,3 @@ void swap_ab(t_list **a, t_list **b)
     swap_a(a);
     swap_b(b);
 }
-
-
-
