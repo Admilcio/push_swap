@@ -24,7 +24,7 @@ int	ft_atoi(const char *str)
 	if (!ft_isdigit(*str) && *str != '\0')
 		ft_display_exit();
 	y *= x;
-	if (y > 2147483647 || y < -2147483648)
+	if (y > 2147483647)
 		ft_display_exit();
 	return ((int) y);
 }

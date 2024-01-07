@@ -11,7 +11,7 @@ void	ft_write_lst(t_list **stack_a, int argc, char **argv, int i)
 		ft_lstadd_back(stack_a, tmp);
 		i++;
 	}
-	tmp = NULL;
+	tmp = NULL; 
 }
 
 void	ft_check_argv(int argc, char **argv, t_list **stack_a)
@@ -33,6 +33,16 @@ void	ft_check_argv(int argc, char **argv, t_list **stack_a)
 		ft_write_lst(stack_a, argc, argv, 1);
 }
 
+void print_list(t_list *list)
+{
+  while (list != NULL)
+  {
+    printf("%d ", list->data);
+    list = list->next;
+  }
+  printf("\n");
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
@@ -48,5 +58,6 @@ int	main(int argc, char **argv)
 		return (0);
 	else
 		ft_check_argv(argc, argv, &stack_a);
+  print_list(stack_a);
 	return (0);
 }
