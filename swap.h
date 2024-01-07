@@ -15,6 +15,5 @@ void  r_rotate_ab(t_list **a, t_list **b);
 void  push_a(t_list **a, t_list **b);
 void  push_b(t_list **a, t_list **b);
 void	ft_sort_three(t_list **stack_a);
-void  ft_sort_five(t_list **stack_a, t_list **stack_b);
 
 #endif
