@@ -30,7 +30,7 @@ void	push_b(t_list **b, t_list **a)
 	printf("pb\n");
 }
 
-void print_list(t_list *list)
+/* void print_list(t_list *list)
 {
   while (list != NULL)
   {
@@ -38,9 +38,9 @@ void print_list(t_list *list)
     list = list->next;
   }
   printf("\n");
-}
+} */
 
-int main()
+/* int main()
 {
   t_list *a = NULL;
   t_list *b = NULL;
@@ -76,4 +76,4 @@ int main()
   printf("\n");
 
   return 0;
-}
+} */

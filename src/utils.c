@@ -46,18 +46,19 @@ void print_list(t_list *list)
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
-	t_list	*stack_b;
+/* 	t_list	*stack_b;
 	int		size;
-	char	**arg;
+	char	**arg; */
 
 	stack_a = NULL;
-	stack_b = NULL;
+/* 	stack_b = NULL;
 	arg = NULL;
-	size = 0;
+	size = 0; */
 	if (argc < 2)
 		return (0);
 	else
 		ft_check_argv(argc, argv, &stack_a);
+  ft_sort_three(&stack_a);
   print_list(stack_a);
 	return (0);
 }
