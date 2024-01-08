@@ -12,7 +12,7 @@ void	push_a(t_list **a, t_list **b)
 	ft_lstadd_front(a, *b);
 	(*a)->next = tmp2;
 	(*b) = tmp;
-	printf("pa\n");
+	write(1, "pa\n", 3);
 }
 
 void	push_b(t_list **b, t_list **a)
@@ -27,53 +27,5 @@ void	push_b(t_list **b, t_list **a)
 	ft_lstadd_front(b, *a);
 	(*b)->next = tmp2;
 	(*a) = tmp;
-	printf("pb\n");
+	write(1, "pb\n", 3);
 }
-
-/* void print_list(t_list *list)
-{
-  while (list != NULL)
-  {
-    printf("%d ", list->data);
-    list = list->next;
-  }
-  printf("\n");
-} */
-
-/* int main()
-{
-  t_list *a = NULL;
-  t_list *b = NULL;
-
-  ft_lstadd_back(&a, ft_lstnew(1));
-  ft_lstadd_back(&a, ft_lstnew(2));
-  ft_lstadd_back(&a, ft_lstnew(3));
-  ft_lstadd_back(&a, ft_lstnew(4));
-
-  ft_lstadd_back(&b, ft_lstnew(5));
-  ft_lstadd_back(&b, ft_lstnew(6));
-  ft_lstadd_back(&b, ft_lstnew(7));
-  ft_lstadd_back(&b, ft_lstnew(8));
-
-  // Test push_a
-  print_list(a);
-  push_a(&a, &b);
-  printf("After push_a:\n");
-  printf("a: ");
-  print_list(a);
-  printf("b: ");
-  print_list(b);
-  printf("\n");
-
-  // Test push_b
-  print_list(a);
-  push_b(&a, &b);
-  printf("After push_b:\n");
-  printf("a: ");
-  print_list(a);
-  printf("b: ");
-  print_list(b);
-  printf("\n");
-
-  return 0;
-} */

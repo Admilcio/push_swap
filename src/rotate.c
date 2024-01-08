@@ -10,7 +10,7 @@ void rotate_a(t_list **a)
         *a = (*a)->next;
         tmp->next = NULL;
         ft_lstadd_back(a, tmp);
-        printf("ra\n");
+        write(1, "ra\n", 3);
     }
 }
 
@@ -24,7 +24,7 @@ void rotate_b(t_list **b)
         *b = (*b)->next;
         tmp->next = NULL;
         ft_lstadd_back(b, tmp);
-        printf("rb\n");
+        write(1, "rb\n", 3);
     }
 }
 
@@ -32,5 +32,5 @@ void rotate_ab(t_list **a, t_list **b)
 {
     rotate_a(a);
     rotate_b(b);
-    printf("rr\n");
+    write(1, "rr\n", 3);
 }

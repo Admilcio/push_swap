@@ -14,7 +14,7 @@ void r_rotate_a(t_list **a)
         tmp->next = 0;
         ft_lstadd_front(a, tmplast);
         *a = tmplast;
-        printf("rra\n");
+        write(1, "rra\n", 4);
     }
 }
 
@@ -32,7 +32,7 @@ void r_rotate_b(t_list **b)
         tmp->next = 0;
         ft_lstadd_front(b, tmplast);
         *b = tmplast;
-        printf("rrb\n");
+        write(1, "rrb\n", 4);
     }
 }
 
@@ -40,5 +40,5 @@ void r_rotate_ab(t_list **a, t_list **b)
 {
     r_rotate_a(a);
     r_rotate_b(b);
-    printf("rrr\n");
+    write(1, "rrr\n", 4);
 }
