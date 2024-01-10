@@ -6,10 +6,14 @@
 # include <stddef.h>
 # include <stdio.h>
 # include <string.h>
+# include <limits.h>
+#include <stdbool.h>
 
 typedef struct s_list
 {
-	int				data;
+	int		number;
+	int		index;
+	bool	has_index;
 	struct s_list	*next;
 }					t_list;
 

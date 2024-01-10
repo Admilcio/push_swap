@@ -1,44 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ada-mata <ada-mata@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/08 12:38:51 by ada-mata          #+#    #+#             */
+/*   Updated: 2024/01/09 16:44:19 by ada-mata         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../swap.h"
 
-void r_rotate_a(t_list **a)
+void	ft_rra(t_list **first_node_a)
 {
-    t_list *tmp; 
-    t_list *tmplast; 
-
-    if (*a != NULL && (*a)->next != NULL)
-    {
-        tmplast = ft_lstlast(*a);
-        tmp = (*a);
-        while (tmp->next->next)
-          tmp = tmp->next;
-        tmp->next = 0;
-        ft_lstadd_front(a, tmplast);
-        *a = tmplast;
-        write(1, "rra\n", 4);
-    }
+	ft_reverse_rotate(first_node_a);
+	write (1, "rra\n", 4);
 }
 
-void r_rotate_b(t_list **b)
+void	ft_rrb(t_list **first_node_b)
 {
-    t_list *tmp; 
-    t_list *tmplast; 
-
-    if (*b != NULL && (*b)->next != NULL)
-    {
-        tmplast = ft_lstlast(*b);
-        tmp = (*b);
-        while (tmp->next->next)
-          tmp = tmp->next;
-        tmp->next = 0;
-        ft_lstadd_front(b, tmplast);
-        *b = tmplast;
-        write(1, "rrb\n", 4);
-    }
+	ft_reverse_rotate(first_node_b);
+	write (1, "rrb\n", 4);
 }
 
-void r_rotate_ab(t_list **a, t_list **b)
+void	ft_rrr(t_list **first_node_a, t_list **first_node_b)
 {
-    r_rotate_a(a);
-    r_rotate_b(b);
-    write(1, "rrr\n", 4);
+	ft_reverse_rotate(first_node_a);
+	ft_reverse_rotate(first_node_b);
+	write (1, "rrr\n", 4);
 }

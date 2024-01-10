@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mcerchi <mcerchi@student.42roma.it>        +#+  +:+       +#+         #
+#    By: ada-mata <ada-mata@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/19 11:52:05 by mcerchi           #+#    #+#              #
-#    Updated: 2022/02/26 14:51:48 by mcerchi          ###   ########.fr        #
+#    Updated: 2024/01/08 15:00:37 by ada-mata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,3 +55,5 @@ re:			fclean ${NAME}
 
 bonus:		${BONUS_OBJS}
 			ar rc ${NAME} ${BONUS_OBJS}
+
+.SILENT:

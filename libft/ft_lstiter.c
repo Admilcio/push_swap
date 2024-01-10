@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcerchi <mcerchi@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: ada-mata <ada-mata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 11:44:53 by mcerchi           #+#    #+#             */
-/*   Updated: 2022/02/17 15:42:42 by mcerchi          ###   ########.fr       */
+/*   Updated: 2024/01/09 15:49:11 by ada-mata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstiter(t_list *lst, void (*f)(int *))
 		return ;
 	while (lst != NULL)
 	{
-		f(&lst->data);
+		f(&lst->number);
 		lst = lst->next;
 	}
 }

@@ -9,7 +9,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(int *))
 	if (lst != NULL)
 	{
 		lst = tmp->next;
-		del(&tmp->data);
+		del(&tmp->number);
 		free(tmp);
 	}
 }
