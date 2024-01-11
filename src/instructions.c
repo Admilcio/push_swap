@@ -6,35 +6,19 @@
 
 void	swap(t_list **stack)
 {
-/* 	t_list	*head;
-	t_list	*next;
-	int		tmp_val;
-	int		tmp_index; */
 	t_list	*tmp;
 
 	if (ft_lstsize(*stack) < 2)
 		return ;
-/* 	head = *stack;
-	next = head->next;
-	if (!head && !next)
-		ft_error("Error occured while swapping!");
-	tmp_val = head->value;
-	tmp_index = head->index;
-	head->value = next->value;
-	head->index = next->index;
-	next->value = tmp_val;
-	next->index = tmp_index; */
 	tmp = (*stack)->next;
 	(*stack)->next = tmp->next;
 	tmp->next = *stack;
 	*stack = tmp;
-	/* return (0); */
 }
 
 void	sa(t_list **stack_a)
 {
 	swap(stack_a);
-		/* return (-1); */
 	ft_putendl_fd("sa", 1);
 	
 }
