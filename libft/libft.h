@@ -9,13 +9,13 @@
 # include <limits.h>
 #include <stdbool.h>
 
+// Stack
 typedef struct s_list
 {
-	int		number;
-	int		index;
-	bool	has_index;
+	int				value;
+	int				index;
 	struct s_list	*next;
-}					t_list;
+}				t_list;
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);

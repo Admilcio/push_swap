@@ -1,48 +1,27 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: ada-mata <ada-mata@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/08 12:39:32 by ada-mata          #+#    #+#              #
-#    Updated: 2024/01/09 16:44:57 by ada-mata         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
 
-NAME    = push_swap
+NAME = push_swap
 
-SRC     = ./src/push.c ./src/utils.c ./src/rotate.c ./src/reverse_rotate.c \
-          ./src/sort.c ./src/swap.c ./src/operations.c\
+SRCS =  $(wildcard src/*.c utils/*.c)
 
-LIBFT   = libft/libft.a
+OBJS = ${SRCS:.c=.o}
 
-OBJ     = $(SRC:.c=.o)
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror -Iincludes
 
-CC      = gcc
+RM = rm -rf
 
-RM      = rm -f
+all: ${NAME}
+${NAME}: ${OBJS}
+	@${MAKE} -C ./libft
+	@${CC} ${CFLAGS} ${OBJS} ./libft/libft.a -o ${NAME}
 
-CFLAGS  = -Wall -Wextra -Werror
-
-all: $(NAME)
-
-$(NAME): $(LIBFT) $(OBJ)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ) libft/libft.a
-
-$(LIBFT):
-		make -C libft
-
-clean:
-	make clean -C ./libft
-	${RM} $(OBJ)
+clean: 
+	@${MAKE} -C ./libft fclean
+	@${RM} ${OBJS}
 
 fclean: clean
-	make fclean -C ./libft
-	${RM} $(NAME) $(OBJ)
+	@${RM} ${NAME}
 
 re: fclean all
 
 .PHONY: all clean fclean re
-
-.SILENT:
