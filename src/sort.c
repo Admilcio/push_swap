@@ -1,4 +1,3 @@
-
 #include "../push_swap.h"
 
 int	get_min(t_list *stack)
