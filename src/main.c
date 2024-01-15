@@ -1,21 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ada-mata <ada-mata@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/15 14:22:25 by ada-mata          #+#    #+#             */
+/*   Updated: 2024/01/15 17:32:52 by ada-mata         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../push_swap.h"
 
 // Prints the Linked List
-void	printList(t_list *head)
+void	print_list(t_list *list)
 {
-	t_list	*tmp;
-
-	tmp = head;
-	while (tmp != NULL)
+	while (list)
 	{
-		ft_putnbr_fd(tmp->value, 1);
-		ft_putendl_fd("", 1);
-		tmp = tmp->next;
+		printf("%d ", list->value);
+		list = list->next;
 	}
 }
 
-static void	initStack(t_list **stack, int argc, char **argv)
+static void	init_stack(t_list **stack, int argc, char **argv)
 {
 	t_list	*new;
 	char	**args;
@@ -48,15 +55,6 @@ static void	sort_stack(t_list **stack_a, t_list **stack_b)
 		big_sort(stack_a, stack_b);
 }
 
-void print_list(t_list *list)
-{
-	while (list)
-	{
-		printf("%d ", list->value);
-		list = list->next;
-	}
-}
-
 int	main(int argc, char **argv)
 {
 	t_list	**stack_a;
@@ -68,7 +66,7 @@ int	main(int argc, char **argv)
 	stack_b = (t_list **)malloc(sizeof(t_list));
 	*stack_a = NULL;
 	*stack_b = NULL;
-	initStack(stack_a, argc, argv);
+	init_stack(stack_a, argc, argv);
 	if (is_sorted(stack_a))
 	{
 		free_stack(stack_a);
@@ -81,4 +79,3 @@ int	main(int argc, char **argv)
 	free_stack(stack_b);
 	return (0);
 }
-
