@@ -14,7 +14,6 @@ static t_list	*get_next_min(t_list **stack)
 	{
 		while (head)
 		{
-			printf("Current Node: value=%d, index=%d\n", head->value, head->index);
 			if ((head->index == -1) && (!has_min || head->value < min->value))
 			{
 				min = head;
