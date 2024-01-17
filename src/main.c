@@ -22,6 +22,26 @@ void	print_list(t_list *list)
 	}
 }
 
+bool	check_repeat(t_list *stack_a)
+{
+	t_list	*current;
+	t_list	*next;
+
+	current = stack_a;
+	while (current)
+	{
+		next = current->next;
+		while (next)
+		{
+			if (current->value == next->value)
+				return (true);
+			next = next->next;
+		}
+		current = current->next;
+	}
+	return (false);
+}
+
 static void	init_stack(t_list **stack, int argc, char **argv)
 {
 	t_list	*new;
