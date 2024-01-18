@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ada-mata <ada-mata@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/15 14:23:21 by ada-mata          #+#    #+#             */
+/*   Updated: 2024/01/18 17:36:03 by ada-mata         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../push_swap.h"
 
@@ -13,9 +24,8 @@ void	ft_free(char **str)
 
 	i = 0;
 	while (str[i])
-		i++;
-	while (i >= 0)
-		free(str[i--]);
+		free(str[i++]);
+	free(str);
 }
 
 int	is_sorted(t_list **stack)
@@ -30,23 +40,6 @@ int	is_sorted(t_list **stack)
 		head = head->next;
 	}
 	return (1);
-}
-
-int	get_distance(t_list **stack, int index)
-{
-	t_list	*head;
-	int		distance;
-
-	distance = 0;
-	head = *stack;
-	while (head)
-	{
-		if (head->index == index)
-			break ;
-		distance++;
-		head = head->next;
-	}
-	return (distance);
 }
 
 void	free_stack(t_list **stack)
