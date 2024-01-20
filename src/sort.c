@@ -6,7 +6,7 @@
 /*   By: ada-mata <ada-mata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:23:05 by ada-mata          #+#    #+#             */
-/*   Updated: 2024/01/18 17:34:38 by ada-mata         ###   ########.fr       */
+/*   Updated: 2024/01/19 17:24:29 by ada-mata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static void	sort_3(t_list **stack_a)
 	}
 }
 
-int	ft_rotate_direction(t_list *a)
+int	ft_pos_direction(t_list *a)
 {
 	int	smallest;
 	int	index;
@@ -75,7 +75,7 @@ void	sort_4_5(t_list **stack_a, t_list **stack_b)
 		min_value = get_min(*stack_a);
 		while ((*stack_a)->value != min_value)
 		{
-			if (ft_rotate_direction(*stack_a) == 1)
+			if (ft_pos_direction(*stack_a) == 1)
 				ra(stack_a);
 			else
 				rra(stack_a);
@@ -91,9 +91,6 @@ void	ft_sort(t_list **stack_a, t_list **stack_b)
 {
 	int	size;
 
-	if (is_sorted(stack_a) || ft_lstsize(*stack_a) == 0
-		|| ft_lstsize(*stack_a) == 1)
-		return ;
 	size = ft_lstsize(*stack_a);
 	if (size == 2)
 		sa(stack_a);
