@@ -6,20 +6,19 @@
 /*   By: ada-mata <ada-mata@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:33:07 by ada-mata          #+#    #+#             */
-/*   Updated: 2024/01/15 17:35:38 by ada-mata         ###   ########.fr       */
+/*   Updated: 2024/01/19 17:23:48 by ada-mata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "./libft/libft.h"
+# include "./libs/libft/libft.h"
+# include "./libs/printf/ft_printf.h"
 
-int		ft_lstsize(t_list *head);
-
+// Error Functions
 void	ft_error(char *msg);
 int		is_sorted(t_list **stack);
-int		get_distance(t_list **stack, int index);
 void	free_stack(t_list **stack);
 void	ft_free(char **str);
 

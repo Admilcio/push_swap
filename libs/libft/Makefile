@@ -5,36 +5,35 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ada-mata <ada-mata@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/15 14:33:14 by ada-mata          #+#    #+#              #
-#    Updated: 2024/01/19 16:46:21 by ada-mata         ###   ########.fr        #
+#    Created: 2022/01/19 11:52:05 by mcerchi           #+#    #+#              #
+#    Updated: 2024/01/15 14:41:20 by ada-mata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
+SRCS		= $(wildcard *.c)
 
-SRCS =  $(wildcard src/*.c utils/*.c *.c)
+OBJS		= ${SRCS:.c=.o}
 
-OBJS = ${SRCS:.c=.o}
+CC			= gcc
 
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror -Iincludes -std=c99 -O3 -g -fsanitize=address
+RM			= rm -f
 
-RM = rm -rf
+CFLAGS		= -Wall -Wextra -Werror
 
-all: ${NAME}
-${NAME}: ${OBJS}
-	@${MAKE} -C ./libs/libft
-	@${MAKE} -C ./libs/printf
-	@${CC} ${CFLAGS} ${OBJS} ./libs/libft/libft.a ./libs/printf/ft_printf.a -o ${NAME}
+NAME = libft.a
 
-clean: 
-	@${MAKE} -C ./libs/libft fclean
-	@${MAKE} -C ./libs/printf fclean
-	@${RM} ${OBJS}
+all:		${NAME}
 
-fclean: clean
-	@${RM} ${NAME}
+${NAME}:	${OBJS}
+			ar rc ${NAME} ${OBJS}
+			ranlib ${NAME}
 
-re: fclean all
+clean:
+			${RM} ${OBJS}
 
-.PHONY: all clean fclean re
+fclean:		clean
+			${RM} ${NAME}
+
+re:			fclean all
+
+.SILENT:
