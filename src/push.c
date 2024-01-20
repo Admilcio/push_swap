@@ -1,6 +1,19 @@
-#include "push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ada-mata <ada-mata@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/15 14:22:46 by ada-mata          #+#    #+#             */
+/*   Updated: 2024/01/15 17:34:08 by ada-mata         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// Takes the first element of one stack and puts it at the top of another | pa and pb
+#include "../push_swap.h"
+
+// Takes the first element of one stack 
+// and puts it at the top of another | pa and pb
 
 void	pa(t_list **a, t_list **b)
 {
@@ -17,7 +30,7 @@ void	pa(t_list **a, t_list **b)
 	ft_putendl_fd("pa", 1);
 }
 
-void   pb(t_list **a, t_list **b)
+void	pb(t_list **a, t_list **b)
 {
 	t_list	*tmp;
 	t_list	*tmp2;
