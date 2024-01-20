@@ -1,6 +1,19 @@
-#include "push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ada-mata <ada-mata@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/15 14:23:01 by ada-mata          #+#    #+#             */
+/*   Updated: 2024/01/15 17:39:41 by ada-mata         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// Shift up all elements of a stack by 1. The first element becomes the last one | ra and rb
+#include "../push_swap.h"
+
+// Shift up all elements of a stack by 1. 
+// The first element becomes the last one | ra and rb
 
 void	rotate(t_list **stack)
 {
